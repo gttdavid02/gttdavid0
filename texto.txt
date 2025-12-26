@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Invitación para Amigos | XV Leslie Desire</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FUENTES -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: #000;
+      color: #fff;
+      text-align: center;
+    }
+
+    .container {
+      padding: 30px 20px;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      margin: 10px 0;
+    }
+
+    h1 {
+      font-size: 2.2em;
+    }
+
+    h2 {
+      font-size: 1.4em;
+      letter-spacing: 2px;
+    }
+
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: #fff;
+      margin: 20px auto;
+    }
+
+    .highlight {
+      font-size: 1.1em;
+      margin-top: 10px;
+      letter-spacing: 1px;
+    }
+
+    .section {
+      margin: 40px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      border: 1px solid #fff;
+      color: #fff;
+      text-decoration: none;
+      margin-top: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    #countdown {
+      font-size: 1.2em;
+      margin-top: 15px;
+      letter-spacing: 2px;
+    }
+
+    footer {
+      font-size: 0.9em;
+      opacity: 0.8;
+      margin: 40px 0 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- MÚSICA -->
+  <audio autoplay loop>
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+
+    <h2>INVITACIÓN PARA AMIGOS</h2>
+    <div class="divider"></div>
+
+    <h1>Leslie Desire</h1>
+    <p class="highlight">Celebra sus XV Años</p>
+
+    <div class="section">
+      <p>📅 <strong>8 de Enero de 2026</strong></p>
+      <p>⛪ Ceremonia: 7:00 PM</p>
+      <p>Parroquia de la Santa Cruz<br>Cihuatlán, Jalisco</p>
+    </div>
+
+    <div class="section">
+      <p>🎉 Recepción: 8:30 PM</p>
+      <p>Salón de Eventos El Palmar<br>Cihuatlán, Jalisco</p>
+    </div>
+
+    <div class="section">
+      <h2>FALTAN</h2>
+      <div id="countdown"></div>
+    </div>
+
+    <div class="section">
+      <a class="btn" href="https://maps.google.com/?q=Salon+de+Eventos+El+Palmar+Cihuatlan+Jalisco" target="_blank">
+        VER MAPA
+      </a>
+    </div>
+
+    <div class="section">
+      🎁 Lluvia de sobres (opcional)
+    </div>
+
+    <footer>
+      Versión especial • Amigos
+    </footer>
+
+  </div>
+
+  <!-- CONTADOR -->
+  <script>
+    const eventDate = new Date("January 8, 2026 19:00:00").getTime();
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const diff = eventDate - now;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+      document.getElementById("countdown").innerHTML =
+        `${days} días • ${hours} hrs • ${minutes} min`;
+    }, 1000);
+  </script>
+
+</body>
+</html>
